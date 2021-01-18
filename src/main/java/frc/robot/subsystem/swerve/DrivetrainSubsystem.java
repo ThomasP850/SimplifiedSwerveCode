@@ -21,11 +21,10 @@ import org.frcteam2910.common.math.Vector2;
 import org.frcteam2910.common.robot.drivers.Mk2SwerveModuleBuilder;
 
 public class DrivetrainSubsystem extends SubsystemBase {
-    //Need to update
-    private static final double TRACKWIDTH = 23.5;
-    private static final double WHEELBASE = 23.5;
+    private static final double TRACKWIDTH = 17.5;
+    private static final double WHEELBASE = 17.5;
 
-    //Need to update
+    //Need to calibrate
     private static final double FRONT_LEFT_ANGLE_OFFSET = -Math.toRadians(0.0);
     private static final double FRONT_RIGHT_ANGLE_OFFSET = -Math.toRadians(0);
     private static final double BACK_LEFT_ANGLE_OFFSET = -Math.toRadians(0);
@@ -52,7 +51,6 @@ public class DrivetrainSubsystem extends SubsystemBase {
     public void init(PortMan portMan) throws Exception {
 
         //private final Gyroscope gyroscope = new NavX(SPI.Port.kMXP);
-        //Need to update port
         pigeon      = new Pigeon(portMan.acquirePort(portMan.can_21_label, "Pigeon"));
 
         pigeon.calibrate();

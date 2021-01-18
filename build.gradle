@@ -8,6 +8,13 @@ targetCompatibility = JavaVersion.VERSION_11
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
 
+repositories {
+    mavenCentral()
+
+    maven {
+        url = "https://jitpack.io"
+    }
+}
 // Define my targets (RoboRIO) and artifacts (deployable files)
 // This is added by GradleRIO's backing project EmbeddedTools.
 deploy {
@@ -57,13 +64,10 @@ dependencies {
     // Enable simulation gui support. Must check the box in vscode to enable support
     // upon debugging
     simulation wpi.deps.sim.gui(wpi.platforms.desktop, false)
-    simulation wpi.deps.sim.driverstation(wpi.platforms.desktop, false)
 
-    // Websocket extensions require additional configuration.
-    // simulation wpi.deps.sim.ws_server(wpi.platforms.desktop, false)
-    // simulation wpi.deps.sim.ws_client(wpi.platforms.desktop, false)
-    compile project(':common')
-    compile project(':common:robot')
+    // Swerve drive stuff
+    implementation "com.github.FRCTeam2910.Common:robot:6456e9c82e"
+    
 }
 
 // Simulation configuration (e.g. environment variables).
