@@ -55,6 +55,7 @@ public class SubsystemFactory {
         allMACs.put("00:80:2F:27:04:C6", "RIO3"); //eth0
         allMACs.put("00:80:2F:17:D7:4B", "RIO2"); //eth0
         allMACs.put("00:80:2F:17:D7:4C", "RIO2"); //usb0
+        allMACs.put("00:80:2F:25:B4:CA", "RIO4");
     }
 
     public static SubsystemFactory getInstance() {
