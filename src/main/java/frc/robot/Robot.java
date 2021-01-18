@@ -20,7 +20,6 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.subsystem.DisplayManager;
 import frc.robot.subsystem.PortMan;
 import frc.robot.subsystem.SubsystemFactory;
 import frc.robot.util.OzoneLogger;
@@ -40,7 +39,6 @@ public class Robot extends TimedRobot {
   static Logger logger = Logger.getLogger(Robot.class.getName());
   private static SubsystemFactory subsystemFactory;
 
-  private DisplayManager dManager;
   private ShuffleboardTab tab;
 
 
@@ -53,10 +51,9 @@ public class Robot extends TimedRobot {
     subsystemFactory = SubsystemFactory.getInstance();
 
     OzoneLogger.getInstance().init(Level.FINE);
-    dManager = new DisplayManager();
 
     try {
-      subsystemFactory.init(dManager, new PortMan());
+      subsystemFactory.init(new PortMan());
 
     } catch (Exception e) {
       StringWriter writer = new StringWriter();
@@ -78,7 +75,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
        CommandScheduler.getInstance().run();
-       //dManager.update();
   }
 
   /**

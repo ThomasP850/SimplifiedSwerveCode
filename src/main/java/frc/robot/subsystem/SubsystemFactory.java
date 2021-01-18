@@ -29,8 +29,6 @@ public class SubsystemFactory {
     private static String botName;
     private HashMap<String, String> allMACs; // will contain mapping of MACs to Bot Names
 
-    private static DisplayManager displayManager;
-
     private PowerDistributionPanel pdp;
 
     /**
@@ -68,7 +66,7 @@ public class SubsystemFactory {
         return me;
     }
 
-    public void init(DisplayManager dm, PortMan portMan) throws Exception {
+    public void init(PortMan portMan) throws Exception {
 
         logger.info("initializing");
 
@@ -76,7 +74,6 @@ public class SubsystemFactory {
 
         logger.info("Running on " + botName);
 
-        displayManager = dm;
         subsystemInterfaceList = new ArrayList<SBInterface>();
         pdp = new PowerDistributionPanel(1);
         botName = "comp";
