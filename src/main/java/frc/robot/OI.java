@@ -119,9 +119,13 @@ public class OI {
     public void init() {
        leftJoy = new Joystick(0); // The left joystick exists on this port in robot map
        rightJoy = new Joystick(1); // The right joystick exists on this port in robot map
+       
        auxJoy = new Joystick(2);
-       leftButtonBox = new Joystick(3);
-       rightButtonBox = new Joystick(4);
+        xbox = new XboxController(3);
+
+
+       leftButtonBox = new Joystick(4);
+       rightButtonBox = new Joystick(5);
     }
 
     public double getLeftJoystickXValue() {
@@ -135,6 +139,9 @@ public class OI {
     public double getRightJoystickXValue() {
         return getFilteredValue (rightJoy.getX());
     }
+    public double getRightJoystickZValue() {
+        return getFilteredValue (rightJoy.getZ());
+    }
 
     public double getRightJoystickYValue() {
         return getFilteredValue (rightJoy.getY());
@@ -147,11 +154,17 @@ public class OI {
         return getFilteredValue (auxJoy.getY());
     }
 
+    public double getAuxJoystickZValue() {
+        return getFilteredValue(auxJoy.getZ());
+    }
     public double getLeftXboxYValue(){
         return getFilteredValue(xbox.getY(Hand.kLeft));
     }
-    public double getRightXboxYValue(){
-        return getFilteredValue(xbox.getY(Hand.kRight));
+    public double getLeftXboxXValue(){
+        return getFilteredValue(xbox.getX(Hand.kLeft));
+    }
+    public double getRightXboxXValue(){
+        return getFilteredValue(xbox.getX(Hand.kRight));
     }
 
     /**

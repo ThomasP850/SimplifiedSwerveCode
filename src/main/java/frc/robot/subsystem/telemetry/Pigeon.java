@@ -32,16 +32,16 @@ public final class Pigeon extends Gyroscope {
         return 0.0;
     }
 
-    public double getAxis(Axis axis) {
+    public double getAxis(String axis) {
       	double[] ypr = new double[3];
         pigeon.getYawPitchRoll(ypr);
 
         switch (axis) {
-            case PITCH:
+            case "PITCH":
                 return Math.toRadians(ypr[1]);
-            case ROLL:
+            case "ROLL":
                 return Math.toRadians(ypr[2]);
-            case YAW:
+            case "YAW":
                 return Math.toRadians(ypr[0]);
             default:
                 return 0.0;
