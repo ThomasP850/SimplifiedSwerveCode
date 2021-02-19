@@ -33,7 +33,7 @@ public class OI {
     static Logger logger = Logger.getLogger(SubsystemFactory.class.getName());
     
     private double  deadzone    = 0.09;
-    private double  scaleFactor = 1.0;
+    private double  scaleFactor = 1.2;
 
     private HashMap<Integer, String> allocatedJoyButtons = new HashMap<Integer, String>();
 
@@ -252,7 +252,7 @@ public class OI {
         if (Math.abs(raw) < deadzone) {
             return 0; 
         } else {
-            return raw * (scaleFactor); // Set the output to a ceratin percent of of the input
+            return raw * (scaleFactor); // Set the output to a certain percent of of the input
         }
     }
 
