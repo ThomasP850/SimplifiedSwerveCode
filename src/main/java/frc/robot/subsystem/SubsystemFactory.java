@@ -56,6 +56,8 @@ public class SubsystemFactory {
         allMACs.put("00:80:2F:17:D7:4B", "RIO2"); //eth0
         allMACs.put("00:80:2F:17:D7:4C", "RIO2"); //usb0
         allMACs.put("00:80:2F:25:B4:CA", "RIO4");
+        allMACs.put("00:80:2F:30:DB:F8", "COVID"); //eth0
+        allMACs.put("00:80:2F:30:DB:F9", "COVID"); //usb0
     }
 
     public static SubsystemFactory getInstance() {
